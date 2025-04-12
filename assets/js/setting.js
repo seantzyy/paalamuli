@@ -8,6 +8,6 @@ const settings = {
 
     effect: -0.75, // play with this for a nice effect
 
-    size: 30, // particle size in pixels
+    size: 4, // particle size in pixels
   },
 };
