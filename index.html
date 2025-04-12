@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gửi lời yêu của đến crush!" />
+    <meta name="Sean" content="Paalam" />
+
+    <!-- Romantic Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./assets/fonts/themify-icons.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="./assets/responsive.css" />
+
+    <title>Paalam po sana uli ako...</title>
+
+    <style>
+      body {
+        font-family: 'Dancing Script', cursive;
+        background-color: #fff0f5; /* light romantic pink */
+      }
+
+      h1, h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 36px;
+        text-align: center;
+        margin-top: 30px;
+        color: rgb(51, 51, 51);
+        font-weight: bolder;
+      }
+
+      .description, .p, .message {
+        text-align: center;
+        margin: 30px auto;
+        font-size: 22px;
+        width: 80%;
+        line-height: 1.8;
+        font-family: 'Parisienne', cursive;
+        color: rgb(51, 51, 51);
+        font-weight: bolder;
+      }
+
+      .btn {
+        font-family: 'Dancing Script', cursive;
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 15px;
+        background-color: #ff80ab;
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px;
+      }
+
+      .btn:hover {
+        background-color: #ec407a;
+      }
+
+      .music-control {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .heading-name h2,
+      .heading-msg p {
+        font-family: 'Great Vibes', cursive;
+        font-size: 28px;
+        color: rgb(51, 51, 51);
+        text-align: center;
+      }
+
+      .message {
+        white-space: pre-line;
+      }
+
+      .container {
+        padding-bottom: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="preloader">
+        <div class="spinner">
+          <div class="dashed-loading"></div>
+        </div>
+      </div>
+
+      <canvas id="pinkboard"></canvas>
+
+      <header class="header">
+        <h1>Hello Tita! Magandang araw po, may paalam po sana uli ako...</h1>
+      </header>
+
+      <div class="content">
+        <p class="description">
+          Tita, magandang araw po. Nais ko lamang po magpaalam kung maaari po akong bumisita muli sa inyo. 
+          Talaga po akong interesado na makilala pa si Angel ng mas mabuti at magkaroon ng pagkakataon na maging bahagi ng kanyang buhay. 
+          Maraming salamat po sa inyong tiwala at sa pagbibigay ng pagkakataon na ligawan ko po siya.
+
+          Huwag po kayong mag-alala, tita, hindi ko po sasayangin ang inyong tiwala. Nais ko po sanang ipagpatuloy ito at patunayan sa inyo na seryoso ako. 
+          Mahalaga po sa akin na magpakita ng respeto sa inyong mga patakaran at oras. Kung may mga bagay po kayong nais baguhin o i-adjust, 
+          bukas po ako sa inyong suggestion at handa pong sundin ang anuman ayon sa inyong kagustuhan. Salamat po ng marami tita!
+        </p>
+
+        <div class="music-control">
+          <audio controls autoplay loop class="music">
+            <source src="./assets/musics/V1.wav" type="audio/wav" />
+          </audio>
+        </div>
+
+        <div class="answer-question" style="text-align: center;">
+          <button class="btn btn--yes">Yes</button>
+          <button class="btn btn--no">No</button>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+          <div class="message-modal">
+            <div class="heading-name">
+              <h2 class="name"></h2>
+            </div>
+            <div class="heading-msg">
+              <p class="message"></p>
+            </div>
+            <div class="footer-modal" style="text-align: center;">
+              <button class="btn btn-close">
+                <i class="btn-icon ti-close"></i>
+                Back 
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insert content using JavaScript -->
+    <script>
+      const CONFIGDATA = {
+        titleHeader: "Hello Tita! Magandang araw po, may paalam po sana uli ako...",
+        descriptionHeader: ".",
+        buttonYes: "Yes",
+        buttonNo: "No",
+        titleModar: "Tita, narito po ang tiyak na detalye",
+        descriptionModar:
+          "12:00 PM - Arrival @ Torre De Manila<br>5:00 PM - 6:00 PM - Attend Palm Sunday Mass Together",
+      };
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".name").innerText = CONFIGDATA.titleModar;
+        document.querySelector(".message").innerHTML = CONFIGDATA.descriptionModar;
+      });
+    </script>
+
+    <!-- External JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/setting.js"></script>
+    <script src="./assets/js/RequestAnimationFrame.js"></script>
+    <script src="./assets/js/heartParticle.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
